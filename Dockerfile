@@ -26,5 +26,10 @@ RUN  set -x \
     && chmod +x /app/docker/start.sh \
     && npm i -g pm2 @nestjs/cli pnpm \
     && rm -rf /var/cache/apk/*
+    
+EXPOSE 5001 5003
+VOLUME /app/config /app/packages/server/static
+
+
 
 ENTRYPOINT sh /app/docker/start.sh
